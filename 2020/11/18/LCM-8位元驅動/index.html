@@ -28,7 +28,7 @@
 <meta property="og:description" content="目標使用FPGA，透過8bit介面傳輸。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-11-18T06:46:38.000Z">
-<meta property="article:modified_time" content="2020-11-19T03:56:07.392Z">
+<meta property="article:modified_time" content="2020-11-26T03:48:00.376Z">
 <meta property="article:author" content="徐定瑋">
 <meta property="article:tag" content="FPGA">
 <meta property="article:tag" content="LCD顯示器">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-11-19 11:56:07" itemprop="dateModified" datetime="2020-11-19T11:56:07+08:00">2020-11-19</time>
+                <time title="修改時間：2020-11-26 11:48:00" itemprop="dateModified" datetime="2020-11-26T11:48:00+08:00">2020-11-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,20 +239,6 @@
             </span>
 
           
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/11/18/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/18/LCM-8位元驅動/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 
         </div>
       </header>
@@ -265,6 +251,7 @@
       
         <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>使用FPGA，透過8bit介面傳輸。</p>
 <a id="more"></a>
+<h1 id="相關知識"><a href="#相關知識" class="headerlink" title="相關知識"></a>相關知識</h1><h2 id="LCM"><a href="#LCM" class="headerlink" title="LCM"></a>LCM</h2><h1 id="狀態機"><a href="#狀態機" class="headerlink" title="狀態機"></a>狀態機</h1><h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>這是我第一次用LCD卻不使用I2C的傳輸方式，最後快完成的時候還因為我時脈的腳位設錯，幸好很快就發現了</p>
 
     </div>
 
@@ -301,13 +288,6 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -354,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E6%A8%99"><span class="nav-number">1.</span> <span class="nav-text">目標</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E6%A8%99"><span class="nav-number">1.</span> <span class="nav-text">目標</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E9%97%9C%E7%9F%A5%E8%AD%98"><span class="nav-number">2.</span> <span class="nav-text">相關知識</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LCM"><span class="nav-number">2.1.</span> <span class="nav-text">LCM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8B%80%E6%85%8B%E6%A9%9F"><span class="nav-number">3.</span> <span class="nav-text">狀態機</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">結果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%83%E5%BE%97"><span class="nav-number">5.</span> <span class="nav-text">心得</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -394,6 +374,7 @@
         <a href="mailto:hz203080@gmail.com" title="E-Mail → mailto:hz203080@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
+
 
 
 
@@ -440,6 +421,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -452,6 +434,65 @@
 
 
 <script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
 
 
@@ -476,41 +517,11 @@
 
 
 
+    <div id="pjax">
   
 
   
 
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://hexoabcdefg.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "http://example.com/2020/11/18/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/";
-    this.page.identifier = "2020/11/18/LCM-8位元驅動/";
-    this.page.title = "LCM 8位元驅動";
-    this.language = 'zh_TW';
-  };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://hexoabcdefg.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
-
+    </div>
 </body>
 </html>
