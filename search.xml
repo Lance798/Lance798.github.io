@@ -6,11 +6,11 @@
     <content><![CDATA[<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>使用FPGA，透過8bit介面傳輸。</p>
 <a id="more"></a>
 <h1 id="使用設備"><a href="#使用設備" class="headerlink" title="使用設備"></a>使用設備</h1><ul>
-<li><img src="https://images.unsplash.com/photo-1573900941478-7cc800f708f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt=" ## unsplash 圖片"></li>
+<li><img src="KTM-626.jpg"></li>
 </ul>
 <h1 id="相關知識"><a href="#相關知識" class="headerlink" title="相關知識"></a>相關知識</h1><p>##</p>
 <h1 id="狀態機"><a href="#狀態機" class="headerlink" title="狀態機"></a>狀態機</h1><h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>這是我第一次用LCD卻不使用I2C的傳輸方式，最後快完成的時候還因為我時脈的腳位設錯，幸好很快就發現了。</p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p>(<a href="https://google.com/">https://google.com/</a>)</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="https://google.com/">google </a></p>
 ]]></content>
       <categories>
         <category>FPGA研究筆記</category>
