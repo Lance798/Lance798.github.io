@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>LCM 8位元驅動</title>
-    <url>/2020/11/18/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/</url>
-    <content><![CDATA[<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>使用FPGA，透過8bit介面傳輸。</p>
-<a id="more"></a>
-<h1 id="使用設備"><a href="#使用設備" class="headerlink" title="使用設備"></a>使用設備</h1><p><img src="KTM-626.jpg" alt="圖片"></p>
-<h1 id="相關知識"><a href="#相關知識" class="headerlink" title="相關知識"></a>相關知識</h1><p>##<br>a</p>
-<h1 id="狀態機"><a href="#狀態機" class="headerlink" title="狀態機"></a>狀態機</h1><h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>這是我第一次用LCD卻不使用I2C的傳輸方式，最後快完成的時候還因為我時脈的腳位設錯，幸好很快就發現了。</p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="https://google.com/">google </a></p>
-]]></content>
-      <categories>
-        <category>FPGA研究筆記</category>
-      </categories>
-      <tags>
-        <tag>FPGA</tag>
-        <tag>LCD顯示器</tag>
-        <tag>VHDL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/11/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -36,5 +17,26 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>LCM 8位元驅動</title>
+    <url>/2020/11/18/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/</url>
+    <content><![CDATA[<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>使用FPGA，透過8bit介面傳輸。</p>
+<a id="more"></a>
+<h1 id="使用設備"><a href="#使用設備" class="headerlink" title="使用設備"></a>使用設備</h1><ul>
+<li>KTM-626<br><img src="KTM-626.jpg" alt="圖片"></li>
+</ul>
+<h1 id="相關知識"><a href="#相關知識" class="headerlink" title="相關知識"></a>相關知識</h1><p>##</p>
+<h1 id="狀態機"><a href="#狀態機" class="headerlink" title="狀態機"></a>狀態機</h1><h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>這是我第一次用LCD卻不使用I2C的傳輸方式，最後快完成的時候還因為我時脈的腳位設錯，幸好很快就發現了。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="https://google.com/">google </a></p>
+]]></content>
+      <categories>
+        <category>FPGA研究筆記</category>
+      </categories>
+      <tags>
+        <tag>FPGA</tag>
+        <tag>LCD顯示器</tag>
+        <tag>VHDL</tag>
+      </tags>
   </entry>
 </search>
