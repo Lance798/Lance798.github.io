@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/11/19/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>LCM 8位元驅動</title>
+    <title>《FPGA研究筆記 三》 LCD模組 8位元驅動</title>
     <url>/2020/11/18/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/</url>
-    <content><![CDATA[<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>使用FPGA，透過8bit介面傳輸。</p>
+    <content><![CDATA[<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>使用FPGA，透過8bit介面來驅動LCD模組。</p>
 <a id="more"></a>
 <h1 id="使用設備"><a href="#使用設備" class="headerlink" title="使用設備"></a>使用設備</h1><ul>
-<li>KTM-626<br><img src="KTM-626.jpg" alt="圖片"></li>
+<li>KTM-626<br><img src="KTM-626.jpg" alt="KTM-626圖片"></li>
 </ul>
-<h1 id="相關知識"><a href="#相關知識" class="headerlink" title="相關知識"></a>相關知識</h1><p>##</p>
-<h1 id="狀態機"><a href="#狀態機" class="headerlink" title="狀態機"></a>狀態機</h1><h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>這是我第一次用LCD卻不使用I2C的傳輸方式，最後快完成的時候還因為我時脈的腳位設錯，幸好很快就發現了。</p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="https://google.com/">google </a></p>
+<h1 id="相關知識"><a href="#相關知識" class="headerlink" title="相關知識"></a>相關知識</h1><h2 id="LCD模組"><a href="#LCD模組" class="headerlink" title="LCD模組"></a>LCD模組</h2><h3 id="名詞說明"><a href="#名詞說明" class="headerlink" title="名詞說明"></a>名詞說明</h3><ul>
+<li>AC 位址計數</li>
+<li>DDRAM 顯示資料暫存器 (Display Data RAM)</li>
+<li>CGROM 自</li>
+<li>HCGROM</li>
+<li>HCGRAM<h3 id="接腳說明"><a href="#接腳說明" class="headerlink" title="接腳說明"></a>接腳說明</h3><img src="LCD_pinout.png" alt="LCD 接腳圖"></li>
+</ul>
+<ol>
+<li>RS</li>
+<li>RW</li>
+<li>EN</li>
+<li>D0 ~ D7<h3 id="指令表"><a href="#指令表" class="headerlink" title="指令表"></a>指令表</h3>a<table style = "text-align:center ">
+<caption><h3>LCD 控制指令表</h3></caption>
+<tr>
+<th rowspan=2>指令</br>名稱</th>
+<th colspan=10>指令碼</th>
+<th rowspan=2>功能</th>
+</tr>
+<tr>
+<th>RS</th><th>RW</th><th>D7</th><th>D6</th><th>D5</th><th>D4</th><th>D3</th><th>D2</th><th>D1</th><th>D0</th>
+</tr>
+<tr>
+<td>CLEAR</br>清除</br>顯示</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>將DDRAM用ASCII碼20H填滿，並設定AC指向DDRAM的位置00H。</td>
+</tr>
+<tr>
+<td>HOME</br>游標</br>歸位</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>X</td>
+<td>設定AC指向DDRAM的位置00H，但保留DDRAM資料。</td>
+</tr>
+</table>
+
+</li>
+</ol>
+<h1 id="設計架構"><a href="#設計架構" class="headerlink" title="設計架構"></a>設計架構</h1><h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>這是我第一次用LCD而不使用I2C的傳輸方式，而且還不是用寫程式的方式，最後快完成的時候還因為我時脈的腳位設錯，但幸好最後有發現。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://blog.csdn.net/qq_36749906/article/details/107462149">Mermaid狀態機教學</a></li>
+<li><a href="http://b2.hlvs.ylc.edu.tw/ezfiles/3/1003/img/106/20140421085729.pdf">LCD模組徹底研究</a></li>
+<li>FPGA晶片設計實務 ISBN：978-986-430-399-1<br><a href="http://www.csd.nutn.edu.tw/DSE/CH9.pdf">http://www.csd.nutn.edu.tw/DSE/CH9.pdf</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>FPGA研究筆記</category>
