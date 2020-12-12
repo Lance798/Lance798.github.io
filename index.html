@@ -190,6 +190,134 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/11/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/table/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lance">
+      <meta itemprop="description" content="紀錄我的學習經過">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="學習筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/11/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/table/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-12-11 20:20:31 / 修改時間：20:20:34" itemprop="dateCreated datePublished" datetime="2020-12-11T20:20:31+08:00">2020-12-11</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/12/11/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/table/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/11/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/table/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <table style = "text-align:center ">
+<tr>
+  <th rowspan=2>指令名稱</th>
+  <th colspan=10>指令碼</th>
+  <th rowspan=2>功能</th>
+</tr>
+<tr>
+  <th>RS</th><th>RW</th><th>D7</th><th>D6</th><th>D5</th><th>D4</th><th>D3</th><th>D2</th><th>D1</th><th>D0</th>
+</tr>
+<tr>
+  <td>CLEAR<br/>清除顯示</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td>
+  <td style = "text-align: left">將DDRAM用ASCII碼20H填滿，並設定指向DDRAM的位置00H。</td>
+</tr>
+<tr>
+  <td>HOME<br/>游標歸位</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>X</td>
+  <td style = "text-align: left">設定AC指向DDRAM的位置00H，但保留DDRAM資料。</td>
+</tr>
+<tr>
+  <td>ENTRY MODE<br/>進入模式<br/>設定</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>I/D</td><td>S</td>
+  <td style = "text-align: left">設定資料讀寫時，AC的調整方法、游標及顯示幕是否位移。<table style = "border:3px #cccccc solid">
+<thead>
+<tr style = "text-align:center">
+<th>I/D</th>
+<th>S</th>
+<th>簡介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td><td>0</td><td>游標向左移，AC減1，<br/>顯示字元不移動</td>
+</tr>
+<tr>
+<td>0</td><td>1</td><td>游標向左移，AC減1，<br/>顯示字元向左移</td>
+</tr>
+<tr>
+<td>1</td><td>0</td><td>游標向右移，AC加1，<br/>顯示字元不移動</td>
+</tr>
+<tr>
+<td>1</td><td>1</td><td >游標向右移，AC加1，<br/>顯示字元向右移</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>DISPLAY<br/>ON/OFF<br/>顯示設定</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>D</td><td>C</td><td>B</td>
+  <td style = "text-align: left">設定顯示器
+  、游標及是否閃爍游標控制。<br/>
+  <ul>
+    <li><strong>D=0</strong>：顯示器關閉，<br/><strong>D=1</strong>：顯示器開啟</li>
+    <li><strong>C=0</strong>：游標不顯示，<strong>C=1</strong>：游標顯示</li>
+    <li><strong>B=0</strong>：游標不閃爍，<strong>B=1</strong>：游標閃爍</li>
+  </ul>
+  </td>
+</tr>
+</table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/18/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -221,7 +349,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-12-09 20:40:39" itemprop="dateModified" datetime="2020-12-09T20:40:39+08:00">2020-12-09</time>
+                <time title="修改時間：2020-12-12 15:32:02" itemprop="dateModified" datetime="2020-12-12T15:32:02+08:00">2020-12-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +386,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>使用FPGA，透過8bit介面來驅動LCD模組。</p>
+          <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>使用FPGA，透過8bit傳輸介面來驅動LCD模組。</p>
+<h1 id="相關知識"><a href="#相關知識" class="headerlink" title="相關知識"></a>相關知識</h1><h2 id="LCD模組"><a href="#LCD模組" class="headerlink" title="LCD模組"></a>LCD模組</h2><p>KTM-626上安裝的LCD型號是WG14432B5，可以顯示中文字，為繪圖型LCD。<br>寬度144畫素、高度32畫素。</p>
+<h3 id="名詞說明"><a href="#名詞說明" class="headerlink" title="名詞說明"></a>名詞說明</h3><ul>
+<li><strong>AC</strong> 位址計數</li>
+<li><strong>BF</strong> 忙碌旗標</li>
+<li><strong>DDRAM</strong> 顯示資料暫存器</li>
+<li><strong>CGRAM</strong> 自定義字型暫存器 </li>
+<li><strong>HCGROM</strong> 半寬字型記憶體(ASCII) </li>
+<li><strong>CGROM</strong> 中文字型記憶體(BIG-5)</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/11/18/LCM-8%E4%BD%8D%E5%85%83%E9%A9%85%E5%8B%95/#more" rel="contents">
@@ -347,7 +484,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -404,6 +541,9 @@
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
+
+
+
         
 
 

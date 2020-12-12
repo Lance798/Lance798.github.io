@@ -1,0 +1,56 @@
+<table style = "text-align:center ">
+<tr>
+  <th rowspan=2>指令名稱</th>
+  <th colspan=10>指令碼</th>
+  <th rowspan=2>功能</th>
+</tr>
+<tr>
+  <th>RS</th><th>RW</th><th>D7</th><th>D6</th><th>D5</th><th>D4</th><th>D3</th><th>D2</th><th>D1</th><th>D0</th>
+</tr>
+<tr>
+  <td>CLEAR<br/>清除顯示</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td>
+  <td style = "text-align: left">將DDRAM用ASCII碼20H填滿，並設定指向DDRAM的位置00H。</td>
+</tr>
+<tr>
+  <td>HOME<br/>游標歸位</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>X</td>
+  <td style = "text-align: left">設定AC指向DDRAM的位置00H，但保留DDRAM資料。</td>
+</tr>
+<tr>
+  <td>ENTRY MODE<br/>進入模式<br/>設定</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>I/D</td><td>S</td>
+  <td style = "text-align: left">設定資料讀寫時，AC的調整方法、游標及顯示幕是否位移。<table style = "border:3px #cccccc solid">
+<thead>
+<tr style = "text-align:center">
+<th>I/D</th>
+<th>S</th>
+<th>簡介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td><td>0</td><td>游標向左移，AC減1，<br/>顯示字元不移動</td>
+</tr>
+<tr>
+<td>0</td><td>1</td><td>游標向左移，AC減1，<br/>顯示字元向左移</td>
+</tr>
+<tr>
+<td>1</td><td>0</td><td>游標向右移，AC加1，<br/>顯示字元不移動</td>
+</tr>
+<tr>
+<td>1</td><td>1</td><td >游標向右移，AC加1，<br/>顯示字元向右移</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>DISPLAY<br/>ON/OFF<br/>顯示設定</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>D</td><td>C</td><td>B</td>
+  <td style = "text-align: left">設定顯示器
+  、游標及是否閃爍游標控制。<br/>
+  <ul>
+    <li><strong>D=0</strong>：顯示器關閉，<br/><strong>D=1</strong>：顯示器開啟</li>
+    <li><strong>C=0</strong>：游標不顯示，<strong>C=1</strong>：游標顯示</li>
+    <li><strong>B=0</strong>：游標不閃爍，<strong>B=1</strong>：游標閃爍</li>
+  </ul>
+  </td>
+</tr>
+</table>
