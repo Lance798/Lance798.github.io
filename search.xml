@@ -4,7 +4,7 @@
     <title>Arduino SCoop使用</title>
     <url>/2021/05/23/Arduino-SCoop%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="安裝程式庫"><a href="#安裝程式庫" class="headerlink" title="安裝程式庫"></a>安裝程式庫</h1><ol>
-<li><p>去下載程式庫 <a href="https://github.com/fabriceo/SCoop">https://github.com/fabriceo/SCoop</a></p>
+<li><p>去下載程式庫： <a href="https://github.com/fabriceo/SCoop">GitHub連結</a></p>
 <p><img src="Download_ZIP.png" alt="Download_ZIP.png"></p>
 </li>
 <li><p>打開壓縮檔，把資料夾SCoop丟到路徑<strong>本機-&gt;文件-&gt;Arduino-&gt;libraries</strong></p>
@@ -18,14 +18,14 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mySCoop.start();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    yield();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>用SCoop可以把要做的不同事當作Task，宣告是用<code>defineTask(名稱)</code>。</p>
-<p>假設現在需要一個顯示七段的Task，命名為blinkTask，那宣告就像這樣</p>
+<p>若現在要寫一個閃爍燈的Task，且命名為blinkTask，那宣告就像這樣</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">defineTask(blinkTask);</span><br></pre></td></tr></table></figure>
 
 <p>然後每個Task都有自己的<code>setup()</code>和<code>loop()</code>，就跟原本的功能差不多，所以就把要同時處理的不同事放到不同Task的<code>loop()</code>裡就好</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">blinkTask::setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    pinMode(LED_BUILTIN, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">blinkTask::loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    digitalWrite(LED_BUILTIN, HIGH);</span><br><span class="line">    sleep(<span class="number">1000</span>);</span><br><span class="line">    digitalWrite(LED_BUILTIN, LOW);</span><br><span class="line">    sleep(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>sleep()</code>其實就是<code>delay()</code>的意思，只是用<code>delay()</code>的話用這就沒意義了，一樣會卡住。</p>
-<p>有其他Task要做就直接加，一樣先做<code>defineTask()</code>然後再寫<code>setup()</code>和<code>loop()</code>就好</p>
+<p>有其他的Task的話，就一樣的作法，先做<code>defineTask()</code>來宣告，然後再寫<code>setup()</code>和<code>loop()</code>就好。</p>
 <hr>
 <p>完整程式碼</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;SCoop.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">defineTask(blinkTask);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">blinkTask::setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  pinMode(LED_BUILTIN, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">blinkTask::loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  pinMode(LED_BUILTIN, HIGH);</span><br><span class="line">  sleep(<span class="number">1000</span>);</span><br><span class="line">  pinMode(LED_BUILTIN, LOW);</span><br><span class="line">  sleep(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  mySCoop.start();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  yield();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
