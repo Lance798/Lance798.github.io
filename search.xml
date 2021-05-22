@@ -55,7 +55,8 @@
 
 <h3 id="重要接腳說明"><a href="#重要接腳說明" class="headerlink" title="重要接腳說明"></a>重要接腳說明</h3><p><img src="LCD_pinout.png" alt="LCD 接腳圖"></p>
 <ol>
-<li><p><strong>RS</strong>  暫存器選擇 和 <strong>RW</strong> 讀/寫控制選擇</p>
+<li><strong>RS</strong>  暫存器選擇 和 <strong>RW</strong> 讀/寫控制選擇</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -84,13 +85,27 @@
 <td align="center">1</td>
 <td align="center">從DDRAM讀取資料。</td>
 </tr>
+<tr>
+<td align="center">2. <strong>EN</strong> LCD致能接腳</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">輸入一正脈波(<strong>0 -&gt; 1 -&gt; 0</strong>)即可完成寫入資料。</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">3. <strong>D0 ~ D7</strong> 資料匯流排</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">輸入指令碼</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
 </tbody></table>
-</li>
-<li><p><strong>EN</strong> LCD致能接腳<br>輸入一正脈波(<strong>0 -&gt; 1 -&gt; 0</strong>)即可完成寫入資料。</p>
-</li>
-<li><p><strong>D0 ~ D7</strong> 資料匯流排<br>輸入指令碼</p>
-</li>
-</ol>
 <h3 id="控制指令表"><a href="#控制指令表" class="headerlink" title="控制指令表"></a>控制指令表</h3><ul>
 <li>基本指令(RE=0)</li>
 </ul>
@@ -130,8 +145,7 @@
 <li><p>部分程式碼</p>
 </li>
 </ul>
-<h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>這是我第一次用LCD而不使用Arduino</p>
-<h1 id="完整程式碼"><a href="#完整程式碼" class="headerlink" title="完整程式碼"></a>完整程式碼</h1><p>-</p>
+<h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><h1 id="完整程式碼"><a href="#完整程式碼" class="headerlink" title="完整程式碼"></a>完整程式碼</h1><p>-</p>
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://blog.csdn.net/qq_36749906/article/details/107462149">Mermaid狀態機教學</a></li>
 <li><a href="http://b2.hlvs.ylc.edu.tw/ezfiles/3/1003/img/106/20140421085729.pdf">LCD模組徹底研究</a></li>
