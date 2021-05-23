@@ -10,6 +10,8 @@
 <li><p>打開壓縮檔，把資料夾SCoop丟到路徑<strong>本機-&gt;文件-&gt;Arduino-&gt;libraries</strong></p>
 <p><img src="SCoop_Folder.png" alt="SCoop_Folder.png"></p>
 </li>
+<li><p>安裝完成</p>
+</li>
 </ol>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>就一樣先匯入程式庫</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;SCoop.h&gt;</span></span></span><br></pre></td></tr></table></figure>
